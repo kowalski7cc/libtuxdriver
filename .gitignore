@@ -517,3 +517,4 @@ MigrationBackup/
 # End of https://www.gitignore.io/api/c,c++,code,cmake,linux,macos,windows,visualstudio,visualstudiocode
 
 obj/
+win32/libtuxdriver.def
