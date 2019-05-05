@@ -48,8 +48,8 @@ SRC_OBJS = \
 
 .PHONY: make clean
 
+# TODO: Improve Windows/Powershell compatibility
 make:
-	# TODO: Improve Windows/Powershell compatibility
 	-@if [ ! -d "$(OBJ_DIR)" ]; then mkdir "$(OBJ_DIR)"; fi
 	-@if [ ! -d "$(OUTPUT_DIR)" ]; then mkdir "$(OUTPUT_DIR)"; fi
 	-@SubWCRev $(SRC_DIR) $(SRC_DIR)/svnrev.tmpl.h $(SRC_DIR)/svnrev.h
@@ -78,7 +78,6 @@ make:
 	$(CC) -c $(CFLAGS) $(SRC_DIR)/tux_flippers.c $(C_INCLUDE_DIRS) -o $(OBJ_DIR)/tux_flippers.o
 	$(CC) -c $(CFLAGS) $(SRC_DIR)/log.c $(C_INCLUDE_DIRS) -o $(OBJ_DIR)/log.o
 	$(CC) -o "$(OUTPUT_DIR)\$(TARGET)" $(SRC_OBJS) $(LIB_DIRS) $(LIBS) $(LDFLAGS)
-	#-@rm -fR $(OBJ_DIR)/*.o
 
 clean:
 	-@rm -fR $(OBJ_DIR)/*.o
